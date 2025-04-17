@@ -7,7 +7,7 @@ interface ModalState {
 }
 
 const initialState: ModalState = {
-  modals: [],
+  modals: []
 };
 
 export const modalSlice = createSlice({
@@ -18,12 +18,12 @@ export const modalSlice = createSlice({
       state.modals.push(action.payload);
     },
     closeModal: (state, action: PayloadAction<string>) => {
-      state.modals = state.modals.filter((modal) => modal.id !== action.payload);
+      state.modals = state.modals.filter(modal => modal.id !== action.payload);
     },
     closeAllModals: (state) => {
       state.modals = [];
-    },
-  },
+    }
+  }
 });
 
 export const { openModal, closeModal, closeAllModals } = modalSlice.actions;

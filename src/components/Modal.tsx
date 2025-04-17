@@ -43,8 +43,8 @@ export const Modal = ({
           buttons.map((button, index) => (
             <Button
               key={index}
-              onClick={() => {
-                button.onClick?.();
+              onClick={(e) => {
+                button.onClick?.(e, handleClose);
               }}
               color={button.color || 'primary'}
               variant={button.variant || 'text'}

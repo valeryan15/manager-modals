@@ -20,12 +20,18 @@ export const Demo = () => {
           text: 'Отмена',
           color: 'error',
           variant: 'outlined',
+          onClick: (_e, handleClose) => {
+            handleClose();
+          },
         },
         {
           text: 'Подтвердить',
           color: 'success',
           variant: 'contained',
-          onClick: () => console.log('Подтверждено!'),
+          onClick: (_e, handleClose) => {
+            console.log('Подтверждено!');
+            handleClose();
+          },
         },
       ],
     });
@@ -58,6 +64,12 @@ export const Demo = () => {
       content: 'Это первое модальное окно, из которого можно открыть второе',
       buttons: [
         {
+          text: 'Закрыть',
+          onClick: (_, handleClose) => {
+            handleClose();
+          }
+        },
+        {
           text: 'Открыть второе окно',
           color: 'primary',
           variant: 'contained',
@@ -71,6 +83,9 @@ export const Demo = () => {
                   text: 'Закрыть',
                   color: 'primary',
                   variant: 'text',
+                  onClick: (_, handleClose) => {
+                    handleClose();
+                  }
                 },
               ],
             });

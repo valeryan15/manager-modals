@@ -1,6 +1,6 @@
 export interface ModalButton {
   text: string;
-  onClick?: () => void;
+  onClick?: (event: React.MouseEvent, handleClose: () => void) => void;
   color?: 'primary' | 'secondary' | 'error' | 'warning' | 'info' | 'success';
   variant?: 'text' | 'outlined' | 'contained';
 }
