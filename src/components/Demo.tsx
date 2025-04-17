@@ -1,6 +1,15 @@
 import { Button, Stack, Typography } from '@mui/material';
 import { useModal } from '../hooks/useModal';
 
+const DemoContent = () => {
+  return <>
+    <h1>Текст с HTML</h1>
+    <div>
+      asdasdasd
+    </div>
+  </>
+}
+
 export const Demo = () => {
   const { open } = useModal();
 
@@ -41,6 +50,14 @@ export const Demo = () => {
     open({
       title: 'Без анимации',
       content: 'Это модальное окно открывается без анимации',
+      animate: false,
+    });
+  };
+
+  const openHTMLnModal = () => {
+    open({
+      title: 'HTML',
+      content: <DemoContent />,
       animate: false,
     });
   };
@@ -111,6 +128,10 @@ export const Demo = () => {
       </Button>
       <Button variant="contained" onClick={openNestedModals}>
         Открыть вложенные окна
+      </Button>
+
+      <Button variant="contained" onClick={openHTMLnModal}>
+        Открыть с HTML
       </Button>
     </Stack>
   );
